@@ -1,0 +1,18 @@
+{
+  "semi": true,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "trailingComma": "all",
+  "parser": "typescript",
+  "overrides": [
+    {
+      "files": ["*.json"],
+      "options": { "parser": "json", "singleQuote": false }
+    },
+    {
+      "files": ["*.scss"],
+      "options": {"parser": "scss"}
+    }
+  ]
+}
