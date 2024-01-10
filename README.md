@@ -1,3 +1,22 @@
+<h1 align="center">Test users full-stack application</h1>
+<h2 align="center">
+<img src="public/README.png">
+</h2>
+<h3 align="center">
+    <a href="http://test-users123.s3-website.us-east-2.amazonaws.com/" target="_blank">Life Demo</a>
+</h3>
+
+
+### Description
+
+---
+
+This is a simple registration form using data from a Lambda service, which displays
+Affiliation (drop down with multiple select) based on State selected
+The project was created using React.js, Typescript and React-Bootstrap
+
+<p><img src="https://img.shields.io/github/languages/top/YanaKovtunDev/AFSCME-test?color=blue"></p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -7,13 +7,16 @@ import { useState } from "react";
 import { User } from "../types/types";
 import axios from "axios";
 import { useAlert } from "react-alert";
+import { VALIDATION } from "../constants";
 
 const SignupSchema = object().shape({
-  firstName: string().min(2, "Too short first name!").max(50, "Too long first name!").required("Required"),
-  lastName: string().min(2, "Too short last name!").max(50, "Too long last name!").required("Required"),
-  email: string().email("Invalid email").required("Required"),
+  firstName: string().min(2, VALIDATION.TO_SHORT).max(50, VALIDATION.TO_LONG).required(VALIDATION.REQUIRED),
+  lastName: string().min(2, VALIDATION.TO_SHORT).max(50, VALIDATION.TO_LONG).required(VALIDATION.REQUIRED),
+  email: string().email(VALIDATION.EMAIL).required(VALIDATION.REQUIRED),
   state: string(),
 });
+
+const url = "https://hpkkgjm317.execute-api.eu-north-1.amazonaws.com/test/users";
 
 export const RegistrationForm = () => {
   const alert = useAlert();
@@ -30,7 +33,7 @@ export const RegistrationForm = () => {
 
   const onSubmitHandler = async (values: User, { resetForm, setSubmitting }: FormikHelpers<User>) => {
     try {
-      const response = await axios.put("https://hpkkgjm317.execute-api.eu-north-1.amazonaws.com/test/users", values);
+      const response = await axios.put(url, values);
       resetForm();
       setSubmitting(false);
       const message = response.data.message;
